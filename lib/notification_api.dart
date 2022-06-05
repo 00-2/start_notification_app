@@ -13,3 +13,15 @@ Future<void> createPlantFoodNotitfication() async {
       ),
   );
 }
+
+
+Future<void> noConnectionToServerNotitfication(String url, int minutes) async {
+  await AwesomeNotifications().createNotification(
+    content: NotificationContent(
+        id:4,
+        channelKey: 'basic_channel',
+        title: '$url non answering for $minutes minutes',
+        body: 'Please restart server',
+    ),
+  );
+}
